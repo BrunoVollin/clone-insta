@@ -1,13 +1,18 @@
 const mongoose = require("mongoose");
 
 const Schema = new mongoose.Schema({
-  email: {
+  picture: {
     type: String,
     required: true,
   },
-  password: {
-      type: String,
-      require: true 
+  description: {
+    type: String,
+    require: true,
+  },
+  user: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "User", 
+    required: true
   }
 });
 
